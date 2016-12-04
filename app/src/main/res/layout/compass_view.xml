@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="compassModel" type="com.juliusscript.compass.viewmodels.CompassViewModel"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/compass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@drawable/compass"
+            app:animation="@{compassModel.cursorAnimation}"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/cursor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/compass"
+            android:layout_alignEnd="@+id/compass"
+            android:layout_alignStart="@+id/compass"
+            android:layout_alignTop="@+id/compass"
+            android:src="@drawable/ic_cursor"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_navigation_marker"
+            app:animation="@{compassModel.markerAnimation}"/>
+    </RelativeLayout>
+</layout>
